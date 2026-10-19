@@ -1,0 +1,200 @@
+<!doctype html>
+
+<html lang="pt">    
+<head>    
+<meta charset="utf-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<meta name="theme-color" content="#080808">    
+<title>ArtEdits — E-books</title>    
+<style>    
+:root{--gold:#d8b45a;--gold2:#f6df96;--black:#080808;--panel:#141414;--muted:#b8b1a0;--line:#40351e}    
+*{box-sizing:border-box}body{margin:0;background:#090909;color:#f7f4ed;font-family:Arial,Helvetica,sans-serif}button,input,textarea{font:inherit}    
+header{position:sticky;top:0;z-index:5;background:#0b0b0bf2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px clamp(14px,4vw,42px);display:flex;align-items:center;justify-content:space-between;gap:14px}    
+.brand{font-weight:900;font-size:24px;letter-spacing:1px;color:#fff;text-decoration:none}.brand span{color:var(--gold)}.head-actions{display:flex;gap:8px;align-items:center}.smallbtn{border:1px solid var(--line);border-radius:9px;padding:10px 12px;color:var(--gold2);background:#15130e;text-decoration:none;cursor:pointer;font-weight:700}    
+.hero{padding:42px clamp(14px,4vw,42px) 28px;background:radial-gradient(ellipse at 70% 0,#2a2112,transparent 60%)}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px;font-size:12px;text-transform:uppercase}.hero h1{font-size:clamp(30px,6vw,54px);line-height:1.06;max-width:720px;margin:12px 0}.hero p{max-width:640px;color:var(--muted);line-height:1.7}.searchrow{display:flex;gap:10px;max-width:600px;margin-top:24px}.searchrow input{flex:1;min-width:0}    
+input,textarea{width:100%;padding:12px;border-radius:9px;border:1px solid #403a2d;background:#101010;color:white;outline:none}input:focus,textarea:focus{border-color:var(--gold)}    
+section{padding:12px clamp(14px,4vw,42px) 36px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:12px 0 20px}.sectionhead h2{margin:0;font-size:25px}.muted{color:var(--muted);font-size:14px}    
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}.card{overflow:hidden;background:linear-gradient(150deg,#181818,#101010);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;min-width:0}.cover{height:235px;background:#201a0e;display:grid;place-items:center;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}.placeholder{color:var(--gold);font-size:54px;font-weight:900}.cardbody{padding:16px;display:flex;flex-direction:column;flex:1}.card h3{margin:0 0 8px;font-size:18px}.desc{color:#c0b9aa;font-size:14px;line-height:1.55;white-space:pre-wrap;flex:1}.price{color:var(--gold2);font-weight:900;font-size:20px;margin:15px 0}.buy,.goldbtn{border:0;border-radius:9px;padding:12px 14px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17130a;font-weight:900;cursor:pointer;text-align:center;text-decoration:none}.empty{padding:36px 18px;text-align:center;color:var(--muted);border:1px dashed #4b4028;border-radius:14px}    
+.admin{margin:10px clamp(14px,4vw,42px) 40px;padding:20px;background:#111;border:1px solid #59451e;border-radius:16px}.admin summary{cursor:pointer;color:var(--gold2);font-weight:900;font-size:18px}.admin-inner{padding-top:18px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px}.field.full{grid-column:1/-1}.formactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.danger{background:#321414;border:1px solid #733838;color:#ffd5d5;border-radius:8px;padding:8px 10px;cursor:pointer}.product-admin{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #302a1d;padding:12px 0}.product-admin .muted{flex:1}.hidden{display:none!important}.notice{padding:12px;border-radius:9px;margin:12px 0;background:#1b1b1b;color:var(--muted);font-size:13px;line-height:1.5}.status{font-size:13px;color:var(--gold2);margin-top:10px;white-space:pre-wrap}    
+footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:#80796b;font-size:12px}    
+@media(max-width:560px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding-top:32px}.cover{height:220px}.brand{font-size:21px}.smallbtn{padding:9px;font-size:13px}}    
+</style>    
+</head>    
+<body>    
+<header>    
+  <a class="brand" href="index.html">Art<span>Edits</span></a>    
+  <div class="head-actions">    
+    <a class="smallbtn" href="https://wa.me/258869993253?text=Ol%C3%A1%21%20Preciso%20de%20suporte%20na%20ArtEdits." target="_blank" rel="noopener">Suporte</a>    
+    <button class="smallbtn" id="loginToggle" type="button">Administração</button>    
+  </div>    
+</header>    
+<div class="hero">    
+  <div class="eyebrow">Biblioteca digital premium</div>    
+  <h1>Conhecimento que cabe<br>no teu bolso.</h1>    
+  <p>Descobre e-books digitais para aprender novas competências e desenvolver os teus projetos. Escolhe um livro e faz a encomenda pelo WhatsApp.</p>    
+  <div class="searchrow"><input id="search" type="search" placeholder="Pesquisar e-books..." aria-label="Pesquisar e-books"></div>    
+</div>    
+<section>    
+  <div class="sectionhead"><h2>Os nossos e-books</h2><span class="muted" id="count">A carregar...</span></div>    
+  <div id="products" class="grid"><div class="empty">A carregar os e-books...</div></div>    
+</section>  <details class="admin" id="adminPanel">    
+  <summary>Painel de administração</summary>    
+  <div class="admin-inner">    
+    <div id="authArea">    
+      <p class="muted">Entra com a conta de administrador que criaste no Firebase Authentication.</p>    
+      <div class="formgrid">    
+        <div class="field"><label for="adminEmail">E-mail</label><input id="adminEmail" type="email" autocomplete="username" placeholder="teu@email.com"></div>    
+        <div class="field"><label for="adminPassword">Palavra-passe</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Palavra-passe"></div>    
+      </div>    
+      <div class="formactions"><button class="goldbtn" id="signIn" type="button">Entrar</button><button class="smallbtn hidden" id="signOut" type="button">Terminar sessão</button></div>    
+      <div class="status" id="authStatus"></div>    
+    </div>    
+    <div id="editorArea" class="hidden">    
+      <div class="notice">Preenche os dados e publica. Para esta versão, a capa e o PDF são endereços HTTPS de ficheiros já alojados. O PDF não deve estar num local público se quiseres controlar o acesso. O armazenamento de ficheiros no Firebase Storage será configurado separadamente.</div>    
+      <form id="productForm">    
+        <input id="editId" type="hidden">    
+        <div class="formgrid">    
+          <div class="field"><label for="title">Título do e-book *</label><input id="title" required maxlength="120"></div>    
+          <div class="field"><label for="price">Preço (MZN) *</label><input id="price" type="number" min="0" step="1" required></div>    
+          <div class="field full"><label for="description">Descrição *</label><textarea id="description" rows="3" required maxlength="1200"></textarea></div>    
+          <div class="field full"><label for="coverUrl">URL da capa (HTTPS)</label><input id="coverUrl" type="url" placeholder="https://..."></div>    
+          <div class="field full"><label for="pdfUrl">URL do PDF (opcional)</label><input id="pdfUrl" type="url" placeholder="https://..."></div>    
+        </div>    
+        <div class="formactions"><button class="goldbtn" type="submit">Publicar e-book</button><button class="smallbtn" type="button" id="cancelEdit">Limpar formulário</button></div>    
+        <div class="status" id="productStatus"></div>    
+      </form>    
+      <h3>Gerir e-books publicados</h3><div id="adminProducts"></div>    
+    </div>    
+  </div>    
+</details>    
+<footer>© <span id="year"></span> ArtEdits · Todos os preços em meticais (MZN)</footer>  <script type="module">    
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";    
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";    
+import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";    const firebaseConfig = {
+apiKey: "AIzaSyBO8KXgohhooOdLtLeauqTOXCTFKKPRDJs",
+authDomain: "artedits.firebaseapp.com",
+projectId: "artedits",
+storageBucket: "artedits.firebasestorage.app",
+messagingSenderId: "941651120435",
+appId: "1:941651120435:web:d6730972acfd933302ae46",
+measurementId: "G-N8QX4VRZBV"
+};
+const WHATSAPP = "258869993253";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const productsEl = document.getElementById("products");
+const countEl = document.getElementById("count");
+const searchEl = document.getElementById("search");
+const adminPanel = document.getElementById("adminPanel");
+const authStatus = document.getElementById("authStatus");
+const productStatus = document.getElementById("productStatus");
+const editorArea = document.getElementById("editorArea");
+const signInBtn = document.getElementById("signIn");
+const signOutBtn = document.getElementById("signOut");
+let products = [];
+let currentUser = null;
+
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("loginToggle").addEventListener("click", () => { adminPanel.open = !adminPanel.open; adminPanel.scrollIntoView({behavior:"smooth",block:"start"}); });
+document.getElementById("signIn").addEventListener("click", async () => {
+authStatus.textContent = "A iniciar sessão...";
+try {
+await signInWithEmailAndPassword(auth, document.getElementById("adminEmail").value.trim(), document.getElementById("adminPassword").value);
+authStatus.textContent = "Sessão iniciada.";
+} catch (e) { authStatus.textContent = "Não foi possível entrar. Confirma o e-mail, a palavra-passe e se o utilizador existe no Firebase."; }
+});
+signOutBtn.addEventListener("click", () => signOut(auth));
+onAuthStateChanged(auth, user => {
+currentUser = user;
+const loggedIn = Boolean(user);
+editorArea.classList.toggle("hidden", !loggedIn);
+signInBtn.classList.toggle("hidden", loggedIn);
+signOutBtn.classList.toggle("hidden", !loggedIn);
+document.getElementById("adminEmail").disabled = loggedIn;
+document.getElementById("adminPassword").classList.toggle("hidden", loggedIn);
+authStatus.textContent = loggedIn ? Sessão iniciada como ${user.email}. : "Não tens sessão iniciada.";
+renderAdminProducts();
+});
+function money(v){return new Intl.NumberFormat("pt-MZ",{style:"currency",currency:"MZN",maximumFractionDigits:0}).format(Number(v)||0)}
+function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"?u.href:""}catch{return ""}}
+function renderProducts(){
+const term = searchEl.value.trim().toLocaleLowerCase("pt");
+const visible = products.filter(p => ${p.title||""} ${p.description||""}.toLocaleLowerCase("pt").includes(term));
+countEl.textContent = ${visible.length} e-book(s);
+if(!visible.length){productsEl.innerHTML='<div class="empty">Ainda não há e-books publicados ou nenhum resultado para esta pesquisa.</div>';return}
+productsEl.innerHTML = "";
+visible.forEach(p=>{
+const card=document.createElement("article");card.className="card";
+const cover=document.createElement("div");cover.className="cover";
+const imageUrl=safeUrl(p.coverUrl||"");
+if(imageUrl){const img=document.createElement("img");img.src=imageUrl;img.alt=Capa de ${p.title||"e-book"};img.loading="lazy";img.onerror=()=>{cover.innerHTML='<div class="placeholder">AE</div>'};cover.append(img)}
+else cover.innerHTML='<div class="placeholder">AE</div>';
+const body=document.createElement("div");body.className="cardbody";
+const title=document.createElement("h3");title.textContent=p.title||"E-book";
+const desc=document.createElement("p");desc.className="desc";desc.textContent=p.description||"E-book digital.";
+const price=document.createElement("div");price.className="price";price.textContent=money(p.price);
+const buy=document.createElement("a");buy.className="buy";buy.textContent="Comprar Agora";buy.target="_blank";buy.rel="noopener";
+const msg=Olá! Vim da loja ArtEdits e gostaria de comprar este e-book:\n\n📚 Livro: ${p.title||"E-book"}\n💰 Preço: ${money(p.price)}\n\nGostaria de saber como posso efetuar o pagamento.;
+buy.href=https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)};
+body.append(title,desc,price,buy);card.append(cover,body);productsEl.append(card);
+});
+}
+searchEl.addEventListener("input",renderProducts);
+function renderAdminProducts(){
+const root=document.getElementById("adminProducts");root.innerHTML="";
+if(!currentUser){root.innerHTML='<p class="muted">Inicia sessão para gerir os produtos.</p>';return}
+if(!products.length){root.innerHTML='<p class="muted">Ainda não existem produtos.</p>';return}
+products.forEach(p=>{
+const row=document.createElement("div");row.className="product-admin";
+const name=document.createElement("strong");name.textContent=p.title||"E-book";
+const price=document.createElement("span");price.className="muted";price.textContent=money(p.price);
+const edit=document.createElement("button");edit.className="smallbtn";edit.type="button";edit.textContent="Editar";edit.onclick=()=>fillForm(p);
+const del=document.createElement("button");del.className="danger";del.type="button";del.textContent="Eliminar";del.onclick=async()=>{
+if(!confirm(Eliminar "${p.title}"?))return;
+try{await deleteDoc(doc(db,"ebooks",p.id));productStatus.textContent="E-book eliminado."}catch(e){productStatus.textContent="Não foi possível eliminar. Verifica as regras de segurança do Firestore."}
+};
+row.append(name,price,edit,del);root.append(row);
+});
+}
+function fillForm(p){
+document.getElementById("editId").value=p.id;
+document.getElementById("title").value=p.title||"";
+document.getElementById("price").value=p.price??"";
+document.getElementById("description").value=p.description||"";
+document.getElementById("coverUrl").value=p.coverUrl||"";
+document.getElementById("pdfUrl").value=p.pdfUrl||"";
+document.querySelector("#productForm button[type=submit]").textContent="Guardar alterações";
+adminPanel.open=true;document.getElementById("productForm").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function clearForm(){document.getElementById("productForm").reset();document.getElementById("editId").value="";document.querySelector("#productForm button[type=submit]").textContent="Publicar e-book";productStatus.textContent=""}
+document.getElementById("cancelEdit").addEventListener("click",clearForm);
+document.getElementById("productForm").addEventListener("submit",async ev=>{
+ev.preventDefault();
+if(!currentUser){productStatus.textContent="Inicia sessão primeiro.";return}
+const title=document.getElementById("title").value.trim();
+const price=Number(document.getElementById("price").value);
+const description=document.getElementById("description").value.trim();
+const coverUrl=safeUrl(document.getElementById("coverUrl").value.trim());
+const pdfUrl=safeUrl(document.getElementById("pdfUrl").value.trim());
+if(!title||!description||!Number.isFinite(price)||price<0){productStatus.textContent="Confirma o título, a descrição e o preço.";return}
+if(document.getElementById("coverUrl").value.trim()&&!coverUrl){productStatus.textContent="A capa deve ter um endereço HTTPS válido.";return}
+if(document.getElementById("pdfUrl").value.trim()&&!pdfUrl){productStatus.textContent="O PDF deve ter um endereço HTTPS válido.";return}
+const data={title,price,description,coverUrl,pdfUrl,updatedAt:serverTimestamp()};
+productStatus.textContent="A guardar...";
+try{
+const id=document.getElementById("editId").value;
+if(id) await updateDoc(doc(db,"ebooks",id),data);
+else await addDoc(collection(db,"ebooks"),{...data,createdAt:serverTimestamp()});
+clearForm();productStatus.textContent="E-book guardado com sucesso.";
+}catch(e){productStatus.textContent="Não foi possível guardar. Verifica se o Firestore está criado e se as regras permitem ao administrador escrever."; }
+});
+onSnapshot(query(collection(db,"ebooks"),orderBy("createdAt","desc")),snap=>{
+products=snap.docs.map(d=>({id:d.id,...d.data()}));renderProducts();renderAdminProducts();
+},err=>{
+products=[];renderProducts();countEl.textContent="Erro de ligação";
+productsEl.innerHTML='<div class="empty">Não foi possível carregar os e-books. Confirma se o Firestore está criado e se as regras permitem leitura pública dos produtos.</div>';
+});
+</script>  </body>
+
+</html> 

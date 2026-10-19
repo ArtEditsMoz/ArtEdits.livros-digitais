@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+
+<meta name="description" content="ArtEdits — Descobre eBooks digitais sobre empreendedorismo, tecnologia e renda digital.">
+
+<title>ArtEdits — Loja Digital</title>
+
+<style>
+:root {
+    --gold: #d8b45a;
+    --gold2: #f6df96;
+    --black: #080808;
+    --panel: #141414;
+    --muted: #b8b1a0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top, #282014 0, #080808 60%);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+main {
+    width: min(100%, 520px);
+    text-align: center;
+    padding: 38px 25px 30px;
+    background: rgba(15, 15, 15, .94);
+    border: 1px solid #4e3d1a;
+    border-radius: 24px;
+    box-shadow: 0 20px 70px #000;
+    animation: aparecer .8s ease;
+}
+
+.logo {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 18px;
+    border: 2px solid var(--gold);
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    color: var(--gold2);
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -2px;
+    transform: rotate(-3deg);
+    box-shadow: 0 0 25px #d8b45a20;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(32px, 8vw, 46px);
+    letter-spacing: 2px;
+}
+
+h1 span {
+    color: var(--gold);
+}
+
+.tag {
+    color: var(--muted);
+    line-height: 1.8;
+    margin: 12px 0 24px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid #55431e;
+    border-radius: 30px;
+    color: var(--gold2);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    background: #d8b45a0d;
+}
+
+.actions {
+    display: grid;
+    gap: 14px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: .5px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+.primary {
+    background: linear-gradient(135deg, var(--gold2), var(--gold));
+    color: #111;
+    box-shadow: 0 8px 24px #d8b45a30;
+}
+
+.primary:hover {
+    box-shadow: 0 10px 30px #d8b45a50;
+}
+
+.secondary {
+    border: 1px solid var(--gold);
+    color: var(--gold2);
+    background: #17130b;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.feature {
+    padding: 14px 5px;
+    background: #ffffff06;
+    border: 1px solid #ffffff12;
+    border-radius: 12px;
+}
+
+.feature .icon {
+    font-size: 23px;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 11px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #55431e, transparent);
+    margin: 27px 0 20px;
+}
+
+footer {
+    font-size: 12px;
+    color: #80796b;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 12px;
+    }
+
+    main {
+        padding: 30px 17px 24px;
+    }
+
+    .features {
+        gap: 6px;
+    }
+
+    .feature p {
+        font-size: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main>
+
+    <div class="badge">✦ A TUA BIBLIOTECA DIGITAL ✦</div>
+
+    <div class="logo" aria-hidden="true">AE</div>
+
+    <h1>Art<span>Edits</span></h1>
+
+    <p class="tag">
+        eBooks digitais para aprender, criar e crescer.<br>
+        <strong style="color:#f6df96">
+            O teu próximo conhecimento começa aqui.
+        </strong>
+    </p>
+
+    <div class="actions">
+
+        <a class="btn primary" href="home.html">
+            📚 ENTRAR NA LOJA →
+        </a>
+
+        <a
+            class="btn secondary"
+            href="https://wa.me/258869993253?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20com%20a%20loja%20ArtEdits."
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            💬 SUPORTE PELO WHATSAPP
+        </a>
+
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <span class="icon">📚</span>
+            <p>Livros digitais</p>
+        </div>
+
+        <div class="feature">
+            <span class="icon">💡</span>
+            <p>Novos conhecimentos</p>
+        </div>
+
+        <div class="feature">
+            <span class="icon">📱</span>
+            <p>Acesso digital</p>
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <footer>
+        <strong>ArtEdits</strong> · Loja digital<br>
+        Conhecimento, criatividade e novas possibilidades.<br><br>
+        © <span id="year"></span> ArtEdits. Todos os direitos reservados.
+    </footer>
+
+</main>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
